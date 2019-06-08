@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "Generate Dash.app compatible docset for Egg.js API",
   "dependencies": {
+    "debug": "^4.1.1",
+    "egg": "^2.22.2",
+    "egg-core": "^4.17.2",
+    "egg-utils": "^2.4.1",
+    "jsdoc": "^3.6.2",
+    "jsdoc-docset": "^0.2.1",
+    "mz": "^2.7.0",
+    "mz-modules": "^2.1.0",
+    "resolve": "^1.11.1",
+    "runscript": "^1.3.0",
+    "zlogger": "^2.1.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -15,6 +26,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
+    "generate": "node lib/index.js",
     "autod": "autod",
     "lint": "eslint .",
     "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
@@ -26,7 +38,10 @@
   "ci": {
     "version": "10"
   },
-  "eslintIgnore": [ "coverage", "dist" ],
+  "eslintIgnore": [
+    "coverage",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": ""
@@ -36,5 +51,9 @@
     "index.js"
   ],
   "author": "Yihang Li <me@dada.li>",
-  "license": "MIT"
+  "license": "MIT",
+  "resolutions": {
+    "jsdoc-docset/**/sequelize": "^5.8.2",
+    "jsdoc-docset/**/sqlite3": "^4.0.6"
+  }
 }
